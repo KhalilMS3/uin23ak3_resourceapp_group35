@@ -1,14 +1,14 @@
 import React from "react";
 
-export default function ContentCard() {
+export default function ContentCard({category, text, sources}) {
   return (
     <>
       <main>
         <section>
-          <h1>Category here</h1>
-          <p>text here</p>
+          <h1>{category}</h1>
+          <p>{text}</p>
           <ul id="links">
-            <li><a href="#">Link here</a></li>
+            {sources.map((source, index) => <li key={index}><a href={source.url}>{source.title}</a></li>)}
           </ul>
         </section>
       </main>
